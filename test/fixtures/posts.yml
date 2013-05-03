@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyText
+  folder_id: 1
+  link_url: MyString
+  title: MyString
+  user_id: 1
+
+two:
+  description: MyText
+  folder_id: 1
+  link_url: MyString
+  title: MyString
+  user_id: 1
