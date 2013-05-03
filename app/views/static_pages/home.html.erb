@@ -1,0 +1,30 @@
+<% if signed_in? %>
+<div id="col-group">
+	<div id="col-1">
+		<% if current_user %>
+			<h1 class="username left"><%= current_user.username %></h1>
+			<%= link_to "Log out", log_out_path, class: 'right settings' %>
+		<% else %>
+			<%= link_to "Sign up", sign_up_path %> or
+			<%= link_to "Log in", log_in_path %>
+		<% end %> <br/>
+		<%= image_tag "lnksy-logo.png", class: 'static-logo'  %>
+		<section>
+			<%= render 'posts/form' %>
+		</section>
+		<section>
+			<h2>Folders</h2>
+				<% @folders.each do |f| %>
+					<h3><%= f.name %></h3>
+					<% @posts.each do |p| %>
+						<p><a href="<%= p.link_url %>" target="_blank"><strong><%= p.title %></strong></a></p>
+						<p><%= p.link_url %></p>
+						<p><%= p.description %></p>
+					<% end %>
+				<% end %>
+		</section>
+	</div>
+</div>
+<% else %>
+	<h1>Signed out</h1>
+<% end %>

@@ -1,0 +1,447 @@
+/******************************************
+/* RESET                   
+/*******************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     font-size: 100%;
+     font: inherit;
+     vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+     display: block;
+}
+body {
+     line-height: 1;
+}
+ol, ul {
+     list-style: none;
+}
+blockquote, q {
+     quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+     content: '';
+     content: none;
+}
+table {
+     border-collapse: collapse;
+     border-spacing: 0;
+}
+
+/******************************************
+/* SETUP                   
+/*******************************************/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+ 
+.clearfix {
+     display: inline-block;
+}
+
+
+/******************************************
+/* BASE STYLES                   
+/*******************************************/
+
+body {
+     color: #000;
+     font-size: .9em;
+     line-height: 1.4;
+     font-family: Helvetica, Arial, sans-serif;
+     background-color: ghostwhite;
+}
+
+a {
+     text-decoration: none;
+     color: black;
+}
+
+
+/******************************************
+/* LAYOUT                   
+/*******************************************/
+
+#col-group > div {
+  padding: .8em 1.5em 1.5em 1.5em;
+}
+
+#page {
+     width: 90%;
+     margin: 0 auto;
+
+}
+
+.settings {
+     float: right;
+}
+
+.right { float: right; }
+.left { float: left; }
+
+
+/******************************************
+/* LOGO Header
+/*******************************************/
+
+.landing-logo {
+     /*background-image: url('images/lnksy-logo-bl.png');*/
+     width: 80%;
+     margin: 3em auto 0;
+     text-align: center;
+     /*background-color: lime;*/
+}
+.landing-logo img {
+     margin: 0 auto;
+     max-width: 100%;
+}
+
+.username {
+     font-size: 1.5em;
+     font-weight: bold;
+}
+
+/*#avatar {
+     width: 100%;
+     text-align: center;
+}*/
+
+.small-logo {
+     width: 100%;
+     text-align: center;
+     margin: 0 auto;
+}
+
+.static-logo {
+     margin: 1em auto 0;
+     max-width: 95%;
+     text-align: center;
+}
+
+.settings {
+     font-size: 1.5em;
+     margin: .2em 0 0;
+     clear: both;
+}
+
+
+/******************************************
+/* LOGIN
+/*******************************************/
+
+#login {
+     margin: 0 auto;
+     width: 90%;
+     text-align: left;
+     /*display: none;*/
+     /*background-color: white;*/
+}
+
+label {
+     display: block;
+     margin-top: 1em;
+     letter-spacing: .2em;
+}
+
+#addLink {
+     width: 70%;
+     height: 30px;
+     background: #efefef;
+     -moz-border-radius: 5px;
+     -webkit-border-radius: 5px;
+     border-radius: 5px;
+     border: 1px solid #dedede;
+     padding: 9px 0;
+     margin-top: .5em;
+     font-size: 1em;
+     color: #3a3a3a;
+}
+
+#addLink:focus, textarea:focus {
+     border: 1px solid #97d6eb;
+}
+
+textarea {
+    width: 100%;
+     height: 8em;
+     margin: .5em 0;
+     font-family: Arial, Helvetica, sans-serif;
+     background: #efefef;
+}
+
+#add, #search-button {
+     background: #CCC;
+     width: 28%;
+     height: 30px;
+     border: 1px solid #dedede;
+     padding: 10px 0;
+     border: none;
+     margin-top: .5em;
+     font-size: 1em;
+     cursor: pointer;
+     /*letter-spacing: .175em;*/
+}
+
+#add:hover, #search-button:hover {
+     opacity:0.9;
+}
+
+#login-links {
+     margin: 2em auto 0;
+     letter-spacing: .125em;
+}
+
+
+/******************************************
+/* Column 1 Navigation
+/*******************************************/
+#accordion a {
+     display: block;
+     padding-left: .5em;
+}
+
+#accordion {
+     margin-top: 10px;
+     cursor: pointer;
+}
+
+.acc-h3 {
+     padding: .5em 0;
+     margin: 0;
+     border-bottom: 1px solid silver;
+
+}
+
+.acc-h3:hover {
+     background-color: white;
+     transition-duration: .3s;
+     -o-transition-duration: .3s;
+     -moz-transition-duration: .3s;
+     -webkit-transition-duration: .3s;
+     transition-timing-function: ease;
+     -o-transition-timing-function: ease;
+     -moz-transition-timing-function: ease;
+     -webkit-transition-timing-function: ease;
+}
+
+.acc-links {
+     padding: .2em;
+     border-bottom: 1px solid silver;
+     transition-duration: .3s;
+     -o-transition-duration: .3s;
+     -moz-transition-duration: .3s;
+     -webkit-transition-duration: .3s;
+     transition-timing-function: ease;
+     -o-transition-timing-function: ease;
+     -moz-transition-timing-function: ease;
+     -webkit-transition-timing-function: ease;
+}
+
+.acc-links:hover {
+     background-color: white;
+}
+
+/******************************************
+/* Column 2
+/*******************************************/
+#col-2 h3 {
+     margin: 0;
+}
+
+#col-2 .col2-url {
+     color: silver;
+}
+
+.col2-links {
+     padding: .5em;
+     /*background-color: lime;*/
+     transition-duration: .3s;
+     -o-transition-duration: .3s;
+     -moz-transition-duration: .3s;
+     -webkit-transition-duration: .3s;
+     transition-timing-function: ease;
+     -o-transition-timing-function: ease;
+     -moz-transition-timing-function: ease;
+     -webkit-transition-timing-function: ease;
+}
+
+.col2-links:hover {
+     background-color: white;
+}
+
+.col2-links p {
+     margin: 0;
+
+}
+
+.favicon {
+     width: 16px;
+     float: left;
+     opacity: 0.5;
+     margin: 0 5px 0 0;
+ }
+
+/******************************************
+/* Column 3
+/*******************************************/
+
+#col-3 p {
+     margin: .5em 0;
+}
+
+/******************************************
+/* ADDITIONAL STYLES                   
+/*******************************************/
+
+img {
+     max-width: 100%;
+}
+
+h2 {
+     margin: 0.25em 0;
+}
+
+a {
+     font-weight: bold;
+}
+
+
+
+
+/******************************************
+/* Media Queries
+/*******************************************/
+
+/* 480px/16px = 30em ---phone */
+/*@media all and (min-width: 30em) {
+     #login {
+          width: 60%;
+     }
+
+     .settings {
+          float: right;
+          margin: 0 10px;
+          clear: both;
+     }
+
+     .avatar {
+          width: 50%;
+     }
+
+     .small-logo {
+          width: 40%;
+          float: right;
+     }
+
+}*/
+/* 768px/16px = 48em ---tablet */
+@media all and (min-width: 48em) {
+     #login {
+          width: 50%;
+     }
+
+     #page {
+          width: 100%;
+     }
+
+     #col-group {
+          overflow: hidden;
+     }
+     #col-1 {
+          width: 33.333333%;
+          float: left;
+     }
+     #col-2 {
+          width: 66.666666%;
+          float: right;
+     }
+     #col-3 {
+          width: 66.666666%;
+          float: right;
+     }
+     .settings {
+          float: right;
+          margin: 0 10px;
+          clear: none;
+     }
+
+     .small-logo {
+          width: 40%;
+          float: left;
+     }
+     .avatar {
+          width: 100%;
+          margin: 5px auto 0;
+     }
+}
+/* 1024px/16px = 64em ---desktop/landscape */
+@media all and (min-width: 66em) {
+     #col-group {
+          overflow: hidden;
+        /*background-color: lime;*/
+
+     }
+     /*.col-group > div {*/
+          /*float: left;*/
+          /*width: 33.3333333%;*/
+     /*}*/
+     #page {
+          width: 100%;
+          margin: 0;
+     }
+     #col-1 {
+          float: left;
+          width: 25%;
+          padding-left: 2em;
+          overflow: auto;
+    }
+     #col-2 {
+          float: left;
+          width: 50%;
+          overflow: hidden;
+    }
+     #col-3 {
+          float: right;
+          width: 25%;
+    }
+
+     #login {
+          width: 40%;
+     }
+     .settings {
+       

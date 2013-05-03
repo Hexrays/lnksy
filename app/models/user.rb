@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates :password, :length => { :in => 6..20 }
   validates :username, :uniqueness => { :case_sensitive => false }
-  validates :email, :uniqueness => true
+  validates :email, :uniqueness => { case_sensitive: false }
   validates :name, :username, :length => { :minimum => 2 }
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   has_many :posts

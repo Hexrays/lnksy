@@ -7,4 +7,6 @@ LnksyProject::Application.routes.draw do
   resources :sessions
   resources :posts
   resources :folders
+
+  match '/home', to: 'static_pages#home'
 end
