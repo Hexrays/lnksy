@@ -8,10 +8,10 @@ class PostsController < ApplicationController
 
 		if @post.save
 			flash[:success] = "Yay for links!"
-			redirect_to current_user
+			redirect_to home_path
 		else
 			flash.now[:error] = "Problem with yr link yo!"
-			redirect_to current_user
+			redirect_to home_path
 		end
 	end
 
@@ -19,4 +19,17 @@ class PostsController < ApplicationController
 		@posts = Post.all
 		@post = Post.new
 	end
+
+	def edit
+		@post = Post.find(params[:id])
+	end
+
+	def destroy
+		@post = Post.find(params[:id])
+		@post.destroy
+		redirect_to home_path
+	end
+
+
+
 end

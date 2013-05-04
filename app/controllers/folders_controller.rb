@@ -8,10 +8,10 @@ class FoldersController < ApplicationController
 
 		if @folder.save
 			flash[:success] = "Yay for new places to store things!"
-			redirect_to current_user
+			redirect_to home_path
 		else
 			flash.now[:error] = "Problem with yr folder yo!"
-			redirect_to current_user
+			redirect_to home_path
 		end
 	end
 

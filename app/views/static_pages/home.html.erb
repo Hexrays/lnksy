@@ -2,29 +2,48 @@
 <div id="col-group">
 	<div id="col-1">
 		<% if current_user %>
-			<h1 class="username left"><%= current_user.username %></h1>
+			<h1 class="username left"><%= link_to current_user.username, home_path %></h1>
 			<%= link_to "Log out", log_out_path, class: 'right settings' %>
 		<% else %>
 			<%= link_to "Sign up", sign_up_path %> or
 			<%= link_to "Log in", log_in_path %>
 		<% end %> <br/>
 		<%= image_tag "lnksy-logo.png", class: 'static-logo'  %>
+		<div class="flash">
+			<% flash.each do |name, msg| %>
+				<%= content_tag :div, msg, :id => "flash_#{name}" %>
+			<% end %>
+		</div>
 		<section>
 			<%= render 'posts/form' %>
 		</section>
 		<section>
+			
 			<h2>Folders</h2>
-				<% @folders.each do |f| %>
-					<h3><%= f.name %></h3>
-					<% @posts.each do |p| %>
-						<p><a href="<%= p.link_url %>" target="_blank"><strong><%= p.title %></strong></a></p>
-						<p><%= p.link_url %></p>
-						<p><%= p.description %></p>
-					<% end %>
-				<% end %>
+			<%= render 'folders/form' %>
 		</section>
-	</div>
+	</div> <!-- end .col-1 -->
+	<div id="col-2">
+	<% @folders.each do |f| %>
+		<h2><%= f.name %></h2>
+
+			<p><%= f.description %></p>
+			<% f.posts.each do |p| %>
+				<div class="col2-links">
+					<p><a href="<%= p.link_url %>" target="_blank">  <%= p.title %></a>- <span class="url"><%= p.strip_url %></span></p>
+					<p><%= p.description %></p>
+					<p><%= link_to 'Delete link', p, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+				</div>
+			<% end %>
+
+	<% end %>
+	</div> <!-- end .col-2 -->
 </div>
 <% else %>
-	<h1>Signed out</h1>
+	<h1 class='landing-logo'><%= image_tag "lnksy-logo.png" %></h1>
+
+	<div class='enter'>
+		<%= link_to "Sign up", sign_up_path %> ||
+		<%= link_to "Log in", log_in_path %>
+	</div>
 <% end %>
