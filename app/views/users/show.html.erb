@@ -1,4 +1,3 @@
-<% if signed_in? %>
 <div id="col-group">
 	<div id="col-1">
 		<% if current_user %>
@@ -24,7 +23,7 @@
 		</section>
 	</div> <!-- end .col-1 -->
 	<div id="col-2">
-	<% current_user.folders.each do |f| %>
+	<% @folders.each do |f| %>
 		<h2><%= f.name %></h2>
 
 			<p><%= f.description %></p>
@@ -39,11 +38,3 @@
 	<% end %>
 	</div> <!-- end .col-2 -->
 </div>
-<% else %>
-	<h1 class='landing-logo'><%= image_tag "lnksy-logo.png" %></h1>
-
-	<div class='enter'>
-		<%= link_to "Sign up", sign_up_path %> ||
-		<%= link_to "Log in", log_in_path %>
-	</div>
-<% end %>

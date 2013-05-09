@@ -15,4 +15,12 @@ class UsersController < ApplicationController
   def edit
   	@user = User.find(params[:id])
   end
+
+  def show
+    @posts = Post.all
+    @post = Post.new
+    @folder = Folder.new
+    @folders = Folder.all
+    @user = User.find(params[:id])
+  end
 end
