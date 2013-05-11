@@ -1,7 +1,7 @@
 <div id="col-group">
 	<div id="col-1">
 		<% if current_user %>
-			<h1 class="username left"><%= link_to current_user.username, home_path %></h1>
+			<h1 class="username left"><%= link_to current_user.username.capitalize, home_path %></h1>
 			<%= link_to "Log out", log_out_path, class: 'right settings' %>
 		<% else %>
 			<%= link_to "Sign up", sign_up_path %> or
@@ -13,17 +13,21 @@
 				<%= content_tag :div, msg, :id => "flash_#{name}" %>
 			<% end %>
 		</div>
-		<section>
-			<%= render 'posts/form' %>
-		</section>
-		<section>
-			
-			<h2>Folders</h2>
-			<%= render 'folders/form' %>
-		</section>
+		<% if current_user == @user.id %>
+			<section>
+				<%= render 'posts/form' %>
+			</section>
+			<section>
+				
+				<h2>Folders</h2>
+				<%= render 'folders/form' %>
+			</section>
+		<% else %>
+			<h2><%= @user.username.capitalize %>'s links</h2>
+		<% end %>
 	</div> <!-- end .col-1 -->
 	<div id="col-2">
-	<% @folders.each do |f| %>
+	<% @user.folders.each do |f| %>
 		<h2><%= f.name %></h2>
 
 			<p><%= f.description %></p>

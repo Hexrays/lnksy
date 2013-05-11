@@ -9,6 +9,10 @@ LnksyProject::Application.routes.draw do
   resources :folders
 
   match '/home', to: 'static_pages#home'
+  # match '/:username' => "users#show", :via => :get
   # match '/:id', to: 'static_pages#home', :as => :user, :via => :get
   # user '/:username', :controller => 'users', :action => 'show'
+  match '/:id', :to => "users#show", :as => :user, :via => :get
+	# match '/:id', :to => "users#update", :as => :user, :via => :put
+	# match '/:id', :to => "users#destroy", :as => :user, :via => :delete
 end

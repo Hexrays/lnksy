@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
 		@folder = Folder.new
 		@folders = Folder.all
 		# @new_user = User.new
-		@user = current_user
+		# @user = current_user
 	end
 	
 end

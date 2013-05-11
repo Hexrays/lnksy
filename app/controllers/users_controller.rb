@@ -22,5 +22,7 @@ class UsersController < ApplicationController
     @folder = Folder.new
     @folders = Folder.all
     @user = User.find(params[:id])
+    # @new_user = User.new
+    # @user = current_user
   end
 end

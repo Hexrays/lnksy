@@ -2,7 +2,7 @@
 <div id="col-group">
 	<div id="col-1">
 		<% if current_user %>
-			<h1 class="username left"><%= link_to current_user.username, home_path %></h1>
+			<h1 class="username left"><%= link_to current_user.username.capitalize, home_path %></h1>
 			<%= link_to "Log out", log_out_path, class: 'right settings' %>
 		<% else %>
 			<%= link_to "Sign up", sign_up_path %> or
