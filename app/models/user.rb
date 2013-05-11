@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :username
   attr_accessor :password
   before_save :encrypt_password
-  after_create :default_folders
+  after_create :default_folder
 
 
   validates_presence_of :email, :name, :password, :username,  :on => :create
@@ -19,8 +19,8 @@ class User < ActiveRecord::Base
     username
   end
 
-  def default_folders
-  
+  def default_folder
+    self.folders.create(:name => "LNKS!")
   end
 
   def self.authenticate(email, password)

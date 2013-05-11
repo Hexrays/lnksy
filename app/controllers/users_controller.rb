@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   	@user = User.new(params[:user])
   	if @user.save
       session[:user_id] = @user.id
-  		redirect_to home_path, :notice => "Signed Up! Welcome new user!"
+      redirect_to home_path, :notice => "Signed Up! Welcome new user!"
   	else
   		render "new"
   	end
