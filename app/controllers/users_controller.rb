@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(params[:user])
   	if @user.save
-  		redirect_to root_url, :notice => "Signed Up!"
+      session[:user_id] = @user.id
+  		redirect_to home_path, :notice => "Signed Up! Welcome new user!"
   	else
   		render "new"
   	end
@@ -21,8 +22,6 @@ class UsersController < ApplicationController
     @post = Post.new
     @folder = Folder.new
     @folders = Folder.all
-    @user = User.find(params[:id])
-    # @new_user = User.new
-    # @user = current_user
+    @user = User.where(:username => params[:username]).first
   end
 end

@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :username
   attr_accessor :password
   before_save :encrypt_password
+  after_create :default_folders
+
 
   validates_presence_of :email, :name, :password, :username,  :on => :create
   validates_confirmation_of :password
@@ -17,13 +19,17 @@ class User < ActiveRecord::Base
     username
   end
 
+  def default_folders
+  
+  end
+
   def self.authenticate(email, password)
-  	user = find_by_email(email)
-  	if user && user.password_hash = BCrypt::Engine.hash_secret(password, user.password_salt)
-  		user
-  	else
-  		nil
-  	end
+    user = find_by_email(email)
+    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+      user
+    else
+      nil
+    end
   end
 
   def encrypt_password
