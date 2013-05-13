@@ -4,8 +4,8 @@ class StaticPagesController < ApplicationController
 		@post = Post.new
 		@folder = Folder.new
 		@folders = Folder.all
-		# @new_user = User.new
-		# @user = current_user
+    @user = current_user
+    @users = User.all
 	end
 	
 end

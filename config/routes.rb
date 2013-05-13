@@ -12,7 +12,7 @@ LnksyProject::Application.routes.draw do
   # match '/:username' => "users#show", :via => :get
   # match '/:id', to: 'static_pages#home', :as => :user, :via => :get
   # user '/:username', :controller => 'users', :action => 'show'
-  match '/:username', :to => "users#show", :as => :user, :via => :get
+  match '/:username', :to => "users#show", :as => :username, :via => :get
 	# match '/:id', :to => "users#update", :as => :user, :via => :put
 	# match '/:id', :to => "users#destroy", :as => :user, :via => :delete
 end

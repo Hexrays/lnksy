@@ -1,30 +1,8 @@
 <% if signed_in? %>
 <div id="col-group">
-	<div id="col-1">
-		<% if current_user %>
-			<h1 class="username left"><%= link_to current_user.username.capitalize, home_path %></h1>
-			<%= link_to "Log out", log_out_path, class: 'right settings' %>
-		<% else %>
-			<%= link_to "Sign up", sign_up_path %> or
-			<%= link_to "Log in", log_in_path %>
-		<% end %> <br/>
-		<%= image_tag "lnksy-logo.png", class: 'static-logo'  %>
-		<div class="flash">
-			<% flash.each do |name, msg| %>
-				<%= content_tag :div, msg, :id => "flash_#{name}" %>
-			<% end %>
-		</div>
-		<section>
-			<%= render 'posts/form' %>
-		</section>
-		<section>
-			
-			<h2>Folders</h2>
-			<%= render 'folders/form' %>
-		</section>
-	</div> <!-- end .col-1 -->
+	<%= render 'users/nav' %>
 	<div id="col-2">
-	<% current_user.folders.each do |f| %>
+	<% @user.folders.each do |f| %>
 		<h2><%= f.name %></h2>
 
 			<p><%= f.description %></p>
@@ -32,7 +10,9 @@
 				<div class="col2-links">
 					<p><a href="<%= p.link_url %>" target="_blank">  <%= p.title %></a>- <span class="url"><%= p.strip_url %></span></p>
 					<p><%= p.description %></p>
-					<p><%= link_to 'Delete link', p, method: :delete, data: { confirm: 'Are you sure?' } %> Edit description</p>
+					<% if current_user && current_user.id == @user.id %>
+						<p><%= link_to 'Delete link', p, method: :delete, data: { confirm: 'Are you sure?' } %> Edit description</p>
+					<% end %>
 				</div>
 			<% end %>
 
