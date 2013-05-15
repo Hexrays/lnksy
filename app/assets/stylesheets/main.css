@@ -458,4 +458,8 @@ a {
           width: 40%;
      }
      .settings {
+          float: right;
+          margin: 0 10px;
+     }
+}
        
