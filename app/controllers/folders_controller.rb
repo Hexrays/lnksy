@@ -7,7 +7,7 @@ class FoldersController < ApplicationController
     @post = Post.new
 		@folder = Folder.find(params[:id])
     @users = User.all
-		@user = User.find(params[:id])
+		@user = User.find(params[:user_id])
     # @folder = Folder.where(:name => params[:name]).first
   end
 
