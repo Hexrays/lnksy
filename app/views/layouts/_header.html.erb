@@ -1,12 +1,12 @@
 <% if current_user %>
 <header>
-	<h1 class="username left"><%= link_to current_user.username.capitalize, user_path(current_user) %></h1>
+	<h1><%= link_to current_user.username.capitalize, user_path(current_user), class: 'left settings' %></h1>
 	<%= link_to "Log out", log_out_path, class: 'right settings' %>
 	<% else %>
-		<%= link_to "Sign up", sign_up_path %> or
-		<%= link_to "Log in", log_in_path %>
+		<%= link_to "Sign up", sign_up_path, class: 'settings' %> or
+		<%= link_to "Log in", log_in_path, class: 'settings' %>
 	<% end %> <br/>
-	<%= image_tag "lnksy-logo.png", class: 'static-logo'  %>
+	<h1><%= image_tag "lnksy-logo.png", class: 'static-logo'  %></h1>
 </header>
 <div class="flash">
 	<% flash.each do |name, msg| %>

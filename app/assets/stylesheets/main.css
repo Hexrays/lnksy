@@ -90,6 +90,7 @@ body {
 a {
      text-decoration: none;
      color: black;
+     font-weight: bold;
 }
 
 h2 {
@@ -97,9 +98,25 @@ h2 {
      font-weight: bold;
 }
 
-h3 {
+h3, .bold  {
      font-size: 1.2em;
      font-weight: bold;
+}
+
+img {
+     max-width: 100%;
+}
+
+/******************************************
+/* Sign-up / Log-in
+/*******************************************/
+.log-in {
+     margin: 4em auto 0;
+     padding: 2em 2.5em 2.5em;
+     width: 90%;
+     text-align: left;
+     border: 2px solid #666;
+     border-radius: 10px;
 }
 
 /*******************************************/
@@ -110,15 +127,15 @@ h3 {
 /* column 1                   
 /*******************************************/
 
-textarea#post_description, textarea#folder_description {
+textarea {
      min-width: 100%;
      height: 4em;
 }
-input#post_link_url, select#post_folder_id, input#folder_name  {
+input, select  {
      min-width: 100%;
 }
 
-span.url {
+.url {
      color: #888;
 }
 
@@ -127,7 +144,15 @@ span.url {
 /*******************************************/
 
 #col-1 {
-  padding: .8em 1.5em 1.5em 1.5em;
+     padding: .8em 1.5em 1.5em 1.5em;
+}
+
+#col-2 {
+     padding: .8em 0;
+}
+
+div.col2-links, header.folder {
+     padding: .2em 1.5em .5em;
 }
 
 #page {
@@ -136,12 +161,42 @@ span.url {
 
 }
 
-.settings {
-     float: right;
-}
-
 .right { float: right; }
 .left { float: left; }
+
+/******************************************
+/* Column 2
+/*******************************************/
+#col-2 h3 {
+     margin: 0;
+}
+
+#col-2 .col2-url {
+     color: silver;
+}
+
+.col2-links {
+     /*padding: .5em;*/
+     /*background-color: lime;*/
+     transition-duration: .3s;
+     -o-transition-duration: .3s;
+     -moz-transition-duration: .3s;
+     -webkit-transition-duration: .3s;
+     transition-timing-function: ease;
+     -o-transition-timing-function: ease;
+     -moz-transition-timing-function: ease;
+     -webkit-transition-timing-function: ease;
+}
+
+.col2-links:hover {
+     background-color: white;
+}
+
+.col2-links p {
+     margin: 0;
+
+}
+
 
 
 /******************************************
@@ -165,14 +220,14 @@ span.url {
      max-width: 100%;
 }
 
-.username {
-     margin: .2em 0 0;
-     font-size: 1.5em;
-     font-weight: bold;
-}
+
 
 .flash {
      color: red;
+}
+
+.settings {
+     font-size: 1.5em;
 }
 
 /*#avatar {
@@ -187,15 +242,12 @@ span.url {
 }
 
 .static-logo {
-     margin: 1em auto 0;
-     max-width: 95%;
+     margin: .25em auto 0;
+     max-width: 100%;
      text-align: center;
 }
 
-.settings {
-     font-size: 1.5em;
-     margin: .2em 0 0;
-}
+
 
 
 /******************************************
@@ -268,112 +320,6 @@ textarea {
 /******************************************
 /* Column 1 Navigation
 /*******************************************/
-#accordion a {
-     display: block;
-     padding-left: .5em;
-}
-
-#accordion {
-     margin-top: 10px;
-     cursor: pointer;
-}
-
-.acc-h3 {
-     padding: .5em 0;
-     margin: 0;
-     border-bottom: 1px solid silver;
-
-}
-
-.acc-h3:hover {
-     background-color: white;
-     transition-duration: .3s;
-     -o-transition-duration: .3s;
-     -moz-transition-duration: .3s;
-     -webkit-transition-duration: .3s;
-     transition-timing-function: ease;
-     -o-transition-timing-function: ease;
-     -moz-transition-timing-function: ease;
-     -webkit-transition-timing-function: ease;
-}
-
-.acc-links {
-     padding: .2em;
-     border-bottom: 1px solid silver;
-     transition-duration: .3s;
-     -o-transition-duration: .3s;
-     -moz-transition-duration: .3s;
-     -webkit-transition-duration: .3s;
-     transition-timing-function: ease;
-     -o-transition-timing-function: ease;
-     -moz-transition-timing-function: ease;
-     -webkit-transition-timing-function: ease;
-}
-
-.acc-links:hover {
-     background-color: white;
-}
-
-/******************************************
-/* Column 2
-/*******************************************/
-#col-2 h3 {
-     margin: 0;
-}
-
-#col-2 .col2-url {
-     color: silver;
-}
-
-.col2-links {
-     padding: .5em;
-     /*background-color: lime;*/
-     transition-duration: .3s;
-     -o-transition-duration: .3s;
-     -moz-transition-duration: .3s;
-     -webkit-transition-duration: .3s;
-     transition-timing-function: ease;
-     -o-transition-timing-function: ease;
-     -moz-transition-timing-function: ease;
-     -webkit-transition-timing-function: ease;
-}
-
-.col2-links:hover {
-     background-color: white;
-}
-
-.col2-links p {
-     margin: 0;
-
-}
-
-.favicon {
-     width: 16px;
-     float: left;
-     opacity: 0.5;
-     margin: 0 5px 0 0;
- }
-
-/******************************************
-/* Column 3
-/*******************************************/
-
-
-/******************************************
-/* ADDITIONAL STYLES                   
-/*******************************************/
-
-img {
-     max-width: 100%;
-}
-
-h2 {
-     margin: 0.25em 0;
-}
-
-a {
-     font-weight: bold;
-}
 
 
 
@@ -406,12 +352,8 @@ a {
 }*/
 /* 768px/16px = 48em ---tablet */
 @media all and (min-width: 48em) {
-     #login {
+     .login {
           width: 50%;
-     }
-
-     #page {
-          width: 100%;
      }
 
      #col-group {
@@ -438,10 +380,6 @@ a {
           /*float: left;*/
           /*width: 33.3333333%;*/
      /*}*/
-     #page {
-          width: 100%;
-          margin: 0;
-     }
      #col-1 {
           float: left;
           width: 25%;
@@ -453,13 +391,16 @@ a {
           overflow: hidden;
     }
 
+     .log-in {
+          width: 20%;
+     }
 
      #login {
           width: 40%;
      }
-     .settings {
+/*     .settings {
           float: right;
           margin: 0 10px;
-     }
+     }*/
 }
        

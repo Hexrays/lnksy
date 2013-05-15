@@ -2,8 +2,9 @@
 	<%= render 'layouts/header' %>
 </div>
 <div id="col-2">
-	<h2><%= @folder.name %></h2>
-	<p><%= @folder.description %></p>
+	<header class="folder">
+		<p><span class="bold"><%= @folder.name %>:</span> <%= @folder.description %></p>
+	</header>
 
 	<% @folder.posts.each do |p| %>
 		<div class="col2-links">

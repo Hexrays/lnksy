@@ -7,7 +7,6 @@ LnksyProject::Application.routes.draw do
 	  resources :folders
 	end
   resources :sessions
-  # resources :folders
   resources :posts
 
 
