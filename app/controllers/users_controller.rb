@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def show
     @posts = Post.all
     @post = Post.new
-    @folder = Folder.new
+    @new_folder = Folder.new
     @folders = Folder.all
     # @user = User.where(:username => params[:username]).first
     # @user = User.find_by_username(params[:id])

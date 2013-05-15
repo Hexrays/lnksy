@@ -6,6 +6,7 @@ class FoldersController < ApplicationController
     @posts = Post.all
     @post = Post.new
 		@folder = Folder.find(params[:id])
+    @new_folder = Folder.new
     @users = User.all
 		@user = User.find(params[:user_id])
     # @folder = Folder.where(:name => params[:name]).first
