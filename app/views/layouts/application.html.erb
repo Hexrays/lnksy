@@ -7,12 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="col-group">
+	<% if signed_in? %>
+		<div id="col-1">
+			<%= render 'layouts/header' %>
+		</div>
+		<div id="col-2">
+			<%= yield %>
+		</div>
+	<% else %>
+	<h1 class='landing-logo'><%= image_tag "lnksy-logo.png" %></h1>
 
+	<div class='enter'>
+		<%= link_to "Sign up", sign_up_path %> ||
+		<%= link_to "Log in", log_in_path %>
+	</div>
+<% end %>
+	</div> <!-- end #col-group -->
 
-
-
-
-<%= yield %>
 
 </body>
 </html>

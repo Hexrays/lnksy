@@ -97,6 +97,11 @@ h2 {
      font-weight: bold;
 }
 
+h3 {
+     font-size: 1.2em;
+     font-weight: bold;
+}
+
 /*******************************************/
 /******************************************
 /* Rails styles                   
@@ -121,7 +126,7 @@ span.url {
 /* LAYOUT                   
 /*******************************************/
 
-#col-group > div {
+#col-1 {
   padding: .8em 1.5em 1.5em 1.5em;
 }
 
@@ -440,7 +445,6 @@ a {
      #col-1 {
           float: left;
           width: 25%;
-          padding-left: 2em;
           overflow: auto;
     }
      #col-2 {

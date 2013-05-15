@@ -1,20 +1,10 @@
-<div id="col-group">
-	<%= render 'users/nav' %>
-	<div id="col-2">
-	<% @user.folders.each do |f| %>
-		<h2><%= f.name %></h2>
-
-			<p><%= f.description %></p>
-			<% f.posts.each do |p| %>
-				<div class="col2-links">
-					<p><a href="<%= p.link_url %>" target="_blank">  <%= p.title %></a>- <span class="url"><%= p.strip_url %></span></p>
-					<p><%= p.description %></p>
-					<% if current_user && current_user.id == @user.id %>
-						<p><%= link_to 'Delete link', p, method: :delete, data: { confirm: 'Are you sure?' } %> Edit description</p>
-					<% end %>
-				</div>
-			<% end %>
-
-	<% end %>
-	</div> <!-- end .col-2 -->
-</div>
+<h2>Most Righteous Recent LNKS!</h2>
+<% @user.posts.take(20).each do |p| %>
+	<div class="col2-links">
+		<p><a href="<%= p.link_url %>" target="_blank">  <%= p.title %></a>- <span class="url"><%= p.strip_url %></span></p>
+		<p><%= p.description %></p>
+		<% if current_user && current_user.id == @user.id %>
+			<p><%= link_to 'Delete link', p, method: :delete, data: { confirm: 'Are you sure?' } %> Edit description</p>
+		<% end %>
+	</div>
+<% end %>

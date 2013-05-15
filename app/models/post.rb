@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   validates :link_url, presence: true
   validates :folder_id, presence: true
   belongs_to :folder
+  belongs_to :user
 	require 'nokogiri'
 	require 'open-uri'
 

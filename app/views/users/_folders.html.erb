@@ -1,0 +1,5 @@
+<div>
+	<% @user.folders.each do |f| %>
+		<h3><%= link_to f.name, user_folder_path(f.user_id, f), :class => "folder-links" %></h3>
+	<% end %>
+</div>

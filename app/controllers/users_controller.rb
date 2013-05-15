@@ -13,16 +13,34 @@ class UsersController < ApplicationController
   	end
   end
 
-  def edit
-  	@user = User.find(params[:id])
-  end
-
   def show
     @posts = Post.all
     @post = Post.new
     @folder = Folder.new
     @folders = Folder.all
-    @user = User.where(:username => params[:username]).first
+    # @user = User.where(:username => params[:username]).first
+    # @user = User.find_by_username(params[:id])
+    @user = User.find(params[:id])
     @users = User.all
+  end
+
+  def edit
+  	@user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update_attributes(params[:user])
+      redirect_to root_url notice: "Updated."
+    else
+      render action: "edit"   
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to root_url
   end
 end

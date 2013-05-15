@@ -1,7 +1,9 @@
-<% if signed_in? %>
 
-	<h2>Most Righteous Recent LNKS!</h2>
-	<% @user.posts.each do |p| %>
+<!-- <div id="col-2"> -->
+	<h2><%= @folder.name %></h2>
+	<p><%= @folder.description %></p>
+
+	<% @folder.posts.each do |p| %>
 		<div class="col2-links">
 			<p><a href="<%= p.link_url %>" target="_blank">  <%= p.title %></a>- <span class="url"><%= p.strip_url %></span></p>
 			<p><%= p.description %></p>
@@ -11,12 +13,4 @@
 		</div>
 	<% end %>
 
-
-<% else %>
-	<h1 class='landing-logo'><%= image_tag "lnksy-logo.png" %></h1>
-
-	<div class='enter'>
-		<%= link_to "Sign up", sign_up_path %> ||
-		<%= link_to "Log in", log_in_path %>
-	</div>
-<% end %>
+<!-- </div> --> <!-- end .col-2 -->

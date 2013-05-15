@@ -15,9 +15,9 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :folders
 
-  def to_param
-    username
-  end
+  # def to_param
+  #   username
+  # end
 
   def default_folder
     self.folders.create(:name => "LNKS!")

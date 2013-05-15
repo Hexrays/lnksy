@@ -1,5 +1,3 @@
-<% if signed_in? %>
-
 	<h2>Most Righteous Recent LNKS!</h2>
 	<% @user.posts.each do |p| %>
 		<div class="col2-links">
@@ -10,13 +8,3 @@
 			<% end %>
 		</div>
 	<% end %>
-
-
-<% else %>
-	<h1 class='landing-logo'><%= image_tag "lnksy-logo.png" %></h1>
-
-	<div class='enter'>
-		<%= link_to "Sign up", sign_up_path %> ||
-		<%= link_to "Log in", log_in_path %>
-	</div>
-<% end %>

@@ -8,10 +8,10 @@ class PostsController < ApplicationController
 
 		if @post.save
 			flash[:success] = "Yay for links!"
-			redirect_to home_path
+			redirect_to root_url
 		else
 			flash.now[:error] = "Problem with yr link yo!"
-			redirect_to home_path
+			redirect_to root_url
 		end
 	end
 
@@ -28,17 +28,16 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 
 		if @post.update_attributes(params[:post])
-			redirect_to home_path notice: "Updated."
+			redirect_to root_url notice: "Updated."
 		else
 			render action: "edit" 	
 		end
-		
 	end
 
 	def destroy
 		@post = Post.find(params[:id])
 		@post.destroy
-		redirect_to home_path
+		redirect_to root_url
 	end
 
 
