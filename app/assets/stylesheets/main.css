@@ -89,8 +89,11 @@ body {
      background-color: white;
      /*background-color: rgb(252, 198,121);*/
 
-     /*background-color: rgba(252, 198, 121, 1);*/
+     /*background-color: rgb(138,52,45);*/
 }
+
+.right { float: right; }
+.left { float: left; }
 
 a {
      text-decoration: none;
@@ -107,6 +110,10 @@ h2 {
 h3, .bold  {
      font-size: 1.2em;
      font-weight: bold;
+}
+
+h3.new-link {
+     cursor: pointer;
 }
 
 img {
@@ -131,33 +138,24 @@ img {
 #col-2 {
      /*padding: .8em 0;*/
      /*background-color: white;*/
-     background-color: rgb(250, 176, 90);
+     background-color: rgb(165,206,57);
 }
 header.folder {
      padding: 1em 1.5em .5em;
-     background-color: rgb(168, 84, 42)
+     background-color: black;
+     color: white;
 }
 
-
-
-#page {
-     width: 90%;
-     margin: 0 auto;
-
+.folder-title {
+     padding: .5em 0 0;
 }
 
-.right { float: right; }
-.left { float: left; }
-
-/******************************************
-/* Column 2
-/*******************************************/
 #col-2 h3 {
      margin: 0;
 }
 
 #col-2 .col2-url {
-     color: silver;
+     color: white;
 }
 
 div.col2-links {
@@ -271,9 +269,9 @@ select, input  {
      padding: 1em 0 0;
 }
 
-
-
-
+.logged-out {
+     text-align: center;     
+}
 
 /******************************************
 /* Media Queries

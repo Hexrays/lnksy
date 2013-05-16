@@ -3,9 +3,11 @@
 	<h1><%= link_to current_user.username.capitalize, user_path(current_user), class: 'left settings' %></h1>
 	<%= link_to "Log out", log_out_path, class: 'right settings' %>
 	<% else %>
-		<%= link_to "Sign up", sign_up_path, class: 'settings' %> or
-		<%= link_to "Log in", log_in_path, class: 'settings' %>
-	<% end %> <br/>
+		<div class="logged-out">
+			<%= link_to "Sign up", sign_up_path, class: 'settings' %> or
+			<%= link_to "Log in", log_in_path, class: 'settings' %>
+		</div>
+	<% end %> 
 	<h1><%= image_tag "lnksy-logo.png", class: 'static-logo'  %></h1>
 </header>
 <div class="flash">
@@ -13,20 +15,29 @@
 		<%= content_tag :div, msg, :id => "flash_#{name}" %>
 	<% end %>
 </div>
-<% if signed_in? %>
-	<% if current_user && current_user.id == @user.id %>
-		<section>
+
+<% if current_user && current_user.id == @user.id %>
+	<section>
+		<h3 class="new-link">+ link</h3>
+		<div class="add-link">
 			<%= render 'posts/form' %>
-		</section>
-		<section>
+		</div>
+	</section>
+	<section>
+		<h3 class="new-folder">+ folder</h3>
+		<div class="add-folder">
 			<%= render 'folders/form' %>
-		</section>
-		<section>
-			<h2>Your Folders</h2>
-			<%= render 'users/folders' %>
-		</section>
-	<% else %>
-		<h2><%= @user.username.capitalize %>'s Folders</h2>
+		</div>
+	</section>
+	<section>
+		<div class="folder-title">
+			<h3>Your Folders</h3>
+		</div>
 		<%= render 'users/folders' %>
-	<% end %>
+	</section>
+<% else %>
+	<div class="folder-title">
+		<h3><%= @user.username.capitalize %>'s Folders</h3>
+	</div>
+	<%= render 'users/folders' %>
 <% end %>
