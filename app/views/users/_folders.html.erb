@@ -1,5 +1,7 @@
-<div>
+<div class='folders'>
+	<ul>
 	<% @user.folders.each do |f| %>
-		<p><%= link_to f.name, user_folder_path(f.user_id, f), :class => "folder-links" %></p>
+		<li class="folder-links" ><%= link_to f.name, user_folder_path(f.user_id, f)%></li>
 	<% end %>
+	</ul>
 </div>

@@ -3,7 +3,7 @@
 		<div class="login-form">
 		<%= form_for @user, :url => {:controller => 'users', :action => "create" } do |f| %>
 			<% if @user.errors.any? %>
-			<div class="error_messages">
+			<div class="flash">
 				<h2>Form is invalid</h2>
 				<ul>
 					<% for message in @user.errors.full_messages %>

@@ -5,11 +5,11 @@
 	<% @user.posts.take(20).each do |p| %>
 	<li>
 		<div class="col2-links">
-			<p><a href="<%= p.link_url %>" target="_blank">  <%= p.title %></a>- <span class="url"><%= p.strip_url %></span></p>
-			<p><%= p.description %></p>
+			<a href="<%= p.link_url %>" target="_blank">  <%= p.title %></a>- <span class="url"><%= p.strip_url %></span>
 			<% if current_user && current_user.id == @user.id %>
-				<p><%= link_to 'Delete link', p, method: :delete, data: { confirm: 'Are you sure?' } %> Edit description</p>
+				<span class='hide right'><%= link_to 'Delete', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-link' %> || Edit</span>
 			<% end %>
+			<p><%= p.description %></p>
 		</div>
 	</li>
 	<% end %>

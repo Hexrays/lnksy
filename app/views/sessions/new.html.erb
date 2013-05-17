@@ -2,6 +2,11 @@
 	<h2>Log in</h2>
 	<div class="login-form">
 		<%= form_tag sessions_path do %>
+			<div class="flash">
+				<% flash.each do |name, msg| %>
+					<%= content_tag :div, msg, :id => "flash_#{name}" %>
+				<% end %>
+			</div>
 			<p>
 				<%= label_tag :email %>: <br/>
 				<%= text_field_tag :email, params[:email] %>

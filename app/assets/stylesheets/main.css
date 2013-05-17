@@ -97,9 +97,9 @@ body {
 
 a {
      text-decoration: none;
-     /*color: rgb(72,36,86);*/
      color: black;
      font-weight: bold;
+     font-size: 1em;
 }
 
 h2 {
@@ -107,7 +107,7 @@ h2 {
      font-weight: bold;
 }
 
-h3, .bold  {
+h3  {
      font-size: 1.2em;
      font-weight: bold;
 }
@@ -121,7 +121,9 @@ img {
 }
 
 .url {
-     color: #888;
+     color: #404040;
+     font-size: .9em;
+     font-weight: lighter;
 }
 
 /******************************************
@@ -140,6 +142,11 @@ img {
      /*background-color: white;*/
      background-color: rgb(165,206,57);
 }
+
+.add-things {
+     padding-top: .75em;
+}
+
 header.folder {
      padding: 1em 1.5em .5em;
      background-color: black;
@@ -147,7 +154,27 @@ header.folder {
 }
 
 .folder-title {
-     padding: .5em 0 0;
+     padding: 1em 0 0;
+     /*border-bottom: 1px solid black;*/
+}
+
+.folders {
+     padding: .25em 0;
+}
+
+.folder-links {
+     padding-top: .20em;
+}
+
+.hide {
+     display: none;
+     text-align: right;
+     font-weight: lighter;
+}
+
+.delete-link {
+     font-weight: lighter;
+     font-size: 1em;
 }
 
 #col-2 h3 {
@@ -177,13 +204,6 @@ div.col2-links {
 }
 
 
-
-.link-list li {
-     /*background-color: rgb(96,41,102);*/
-}
-
-
-
 /******************************************
 /* LOGO Header
 /*******************************************/
@@ -191,7 +211,6 @@ div.col2-links {
      margin: 0 auto;
      text-align: center;
 }
-
 
 .landing-logo {
      /*background-image: url('images/lnksy-logo-bl.png');*/
@@ -205,29 +224,17 @@ div.col2-links {
      max-width: 100%;
 }
 
-
-
-.flash {
-     color: red;
-}
-
 .settings {
-     font-size: 1.5em;
+     font-size: 1.25em;
 }
 
-/*#avatar {
-     width: 100%;
-     text-align: center;
-}*/
-
-.small-logo {
-     width: 100%;
-     text-align: center;
-     margin: 0 auto;
+.hi  {
+     /*font-size: 1.1em;*/
+     font-weight: bold;
 }
 
 .static-logo {
-     margin: .25em auto 0;
+     margin: .5em auto 0;
      max-width: 100%;
      text-align: center;
 }
@@ -255,9 +262,11 @@ select, input  {
      min-width: 100%;
 }
 
-/******************************************
-/* Sign-up / Log-in
-/*******************************************/
+.flash {
+     color: red;
+     padding-bottom: .25em;
+}
+
 .log-in {
      margin: 4em auto 0;
      padding: 2em 2.5em 2.5em;
@@ -266,7 +275,7 @@ select, input  {
 }
 
 .login-form {
-     padding: 1em 0 0;
+     padding: .5em 0 0;
 }
 
 .logged-out {
@@ -311,34 +320,47 @@ select, input  {
           overflow: hidden;
      }
      #col-1 {
-          width: 33.333333%;
+          width: 30%;
           float: left;
      }
      #col-2 {
-          width: 66.666666%;
+          width: 70%;
+          float: right;
+     }
+
+}
+
+@media all and (min-width: 55em) {
+
+     #col-group {
+          overflow: hidden;
+     }
+     #col-1 {
+          width: 25%;
+          float: left;
+     }
+     #col-2 {
+          width: 75%;
           float: right;
      }
 
 }
 /* 1024px/16px = 64em ---desktop/landscape */
-@media all and (min-width: 66em) {
+@media all and (min-width: 70em) {
      #col-group {
           overflow: hidden;
         /*background-color: lime;*/
 
      }
-     /*.col-group > div {*/
-          /*float: left;*/
-          /*width: 33.3333333%;*/
-     /*}*/
+
      #col-1 {
           float: left;
-          width: 25%;
+          width: 20%;
           overflow: auto;
     }
      #col-2 {
           float: left;
-          width: 75%;
+          width: 80%;
           overflow: hidden;
     }
 

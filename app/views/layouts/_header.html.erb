@@ -1,6 +1,6 @@
 <% if current_user %>
 <header>
-	<h1><%= link_to current_user.username.capitalize, user_path(current_user), class: 'left settings' %></h1>
+	<h1 class='left settings'><span class="hi">Hi</span> <%= link_to current_user.username.capitalize, user_path(current_user)%><span class="hi">!</span></h1>
 	<%= link_to "Log out", log_out_path, class: 'right settings' %>
 	<% else %>
 		<div class="logged-out">
@@ -8,7 +8,7 @@
 			<%= link_to "Log in", log_in_path, class: 'settings' %>
 		</div>
 	<% end %> 
-	<h1><%= image_tag "lnksy-logo.png", class: 'static-logo'  %></h1>
+	<h1><%= image_tag "lnksy-logo2.png", class: 'static-logo', alt: 'lnksy', title: 'lnksy' %></h1>
 </header>
 <div class="flash">
 	<% flash.each do |name, msg| %>
@@ -17,21 +17,23 @@
 </div>
 
 <% if current_user && current_user.id == @user.id %>
-	<section>
-		<h3 class="new-link">+ link</h3>
-		<div class="add-link">
-			<%= render 'posts/form' %>
-		</div>
-	</section>
-	<section>
-		<h3 class="new-folder">+ folder</h3>
-		<div class="add-folder">
-			<%= render 'folders/form' %>
-		</div>
-	</section>
+	<div class="add-things">
+		<section>
+			<h3 class="new-link">+ LINK</h3>
+			<div class="add-link">
+				<%= render 'posts/form' %>
+			</div>
+		</section>
+		<section>
+			<h3 class="new-folder">+ FOLDER</h3>
+			<div class="add-folder">
+				<%= render 'folders/form' %>
+			</div>
+		</section>
+	</div>
 	<section>
 		<div class="folder-title">
-			<h3>Your Folders</h3>
+			<h3>MY FOLDERS</h3>
 		</div>
 		<%= render 'users/folders' %>
 	</section>
