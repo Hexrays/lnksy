@@ -4,17 +4,12 @@ $(document).ready(function(){
 			opacity = 1;
 			linkField = $('div.add-link').hide();
 			folderField = $('div.add-folder').hide();
-			linkList = $('ul.link-list').hide();
+			linkList = $('ul.link-list li').hide();
 
 	// console.log(liCount);
 	// console.log(colorSteps);
-	linkList.slideDown(750);
+	// linkList.slideDown(750);
 
-	for (var i = 0; i<liCount; i++){
-		liColor = 'rgba(0,188,235, '+opacity+')';
-		$(".link-list li:nth-child("+i+")").css('background-color', liColor);
-		opacity -= colorSteps;
-	}
 
 	$('h3.new-link').on('click', function(){
 		linkField.slideToggle();
@@ -26,6 +21,24 @@ $(document).ready(function(){
 	$('li').hover(function(){
 		$(this).find('.hide').toggle();
 	});
+
+	$('ul.link-list li').each(function(index){
+		var $this = $(this);
+				// liColor = 'rgba(0,188,235, '+opacity+')';
+
+		setTimeout(function(){
+			var liColor = 'rgba(0,188,235, '+opacity+')';
+			$this.css('background-color', liColor).fadeIn();
+			opacity -= colorSteps;
+		}, index * 50);
+
+			// $this.css('background-color', liColor).slideDown();
+			// opacity -= colorSteps;
+	});
+
+		// for (var l = 0; l < liCount; l++) {
+		// 	$("ul.link-list li:nth-child("+l+")").slideDown();
+		// };
 
 	// jQuery.fn.rollDown = function( speed, easing, callback ) {
 		// for (var i = 0; i < liCount; i++) {

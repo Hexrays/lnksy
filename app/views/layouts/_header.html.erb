@@ -1,7 +1,7 @@
 <% if current_user %>
 <header>
-	<h1 class='left settings'><span class="hi">Hi</span> <%= link_to current_user.username.capitalize, user_path(current_user)%><span class="hi">!</span></h1>
-	<%= link_to "Log out", log_out_path, class: 'right settings' %>
+	<h1 class='left settings'><span class="hi">Hi <%= link_to current_user.username.capitalize, user_path(current_user)%>!</span></h1>
+	<%= link_to "Log out", log_out_path, class: 'right settings hi' %>
 	<% else %>
 		<div class="logged-out">
 			<%= link_to "Sign up", sign_up_path, class: 'settings' %> or
