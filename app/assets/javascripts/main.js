@@ -5,7 +5,6 @@ $(document).ready(function(){
 			linkField = $('div.add-link').hide();
 			folderField = $('div.add-folder').hide();
 			linkList = $('ul.link-list li').hide();
-
 	// console.log(liCount);
 	// console.log(colorSteps);
 	// linkList.slideDown(750);
@@ -35,6 +34,34 @@ $(document).ready(function(){
 			// $this.css('background-color', liColor).slideDown();
 			// opacity -= colorSteps;
 	});
+
+
+	// var signBox = $('div.sign-up').hide();
+	// 		sw = $(window).width() / 2 - signBox.outerWidth() / 2,
+	// 		sh = $(window).height() / 2 - signBox.outerHeight() / 2;
+
+
+	// $('h3.sign').on('click', function(){
+	// 	signBox.css({
+	// 		'position': 'absolute',
+	// 		'top': sh,
+	// 		'left': sw
+	// 	}).fadeToggle();
+	// });
+
+	// var logBox = $('div.log-in').hide();
+	// 		lw = $(window).width() / 2 - logBox.outerWidth() / 2,
+	// 		lh = $(window).height() / 2 - logBox.outerHeight() / 2;
+
+
+	// $('h3.log').on('click', function(){
+	// 	logBox.css({
+	// 		'position': 'absolute',
+	// 		'top': lh,
+	// 		'left': lw
+	// 	}).fadeToggle();
+	// });
+
 
 		// for (var l = 0; l < liCount; l++) {
 		// 	$("ul.link-list li:nth-child("+l+")").slideDown();

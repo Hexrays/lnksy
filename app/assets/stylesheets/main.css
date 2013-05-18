@@ -124,7 +124,7 @@ h3  {
      font-weight: bold;
 }
 
-h3.new-link {
+h3.new-link, h3.sign, h3.log {
      cursor: pointer;
 }
 
@@ -155,11 +155,7 @@ img {
      background-color: rgb(165,206,57);
 }
 
-.add-things {
-     padding-top: .6em;
-}
-
-.new-link, .new-folder {
+.new-link, .new-folder, .add-things {
      padding-top: .6em;
 }
 
@@ -175,6 +171,10 @@ header.folder {
      /*border-bottom: 1px solid black;*/
 }
 
+.folder-name {
+     font-size: 1.5em;
+}
+
 .folders {
      padding: .25em 0;
 }
@@ -185,6 +185,9 @@ header.folder {
 
 .hide {
      display: none;
+}
+
+.post-edit {
      text-align: right;
      font-weight: lighter;
 }
@@ -226,7 +229,10 @@ div.col2-links {
 /*******************************************/
 .enter {
      margin: 0 auto;
+     padding-top: 1em;
      text-align: center;
+     font-family: "BebasNeueRegular";
+     font-size: 1.5em;
 }
 
 .landing-logo {
@@ -257,6 +263,17 @@ div.col2-links {
      text-align: center;
 }
 
+.sign-box {
+     width: 49%;
+     float: left;
+     text-align: right;
+}
+
+.log-box {
+     width: 49%;
+     float: right;
+     text-align: left;
+}
 /******************************************
 /* forms                 
 /*******************************************/
@@ -285,8 +302,8 @@ select, input  {
      padding-bottom: .25em;
 }
 
-.log-in {
-     margin: 4em auto 0;
+.log-in, .sign-up {
+     margin: 3em auto 0;
      padding: 2em 2.5em 2.5em;
      width: 90%;
      text-align: left;
@@ -304,34 +321,13 @@ select, input  {
 /* Media Queries
 /*******************************************/
 
-/* 480px/16px = 30em ---phone */
-/*@media all and (min-width: 30em) {
-     #login {
-          width: 60%;
-     }
 
-     .settings {
-          float: right;
-          margin: 0 10px;
-          clear: both;
-     }
-
-     .avatar {
-          width: 50%;
-     }
-
-     .small-logo {
-          width: 40%;
-          float: right;
-     }
-
-}*/
 /* 768px/16px = 48em ---tablet */
 @media all and (min-width: 48em) {
-     .log-in {
+     .log-in, .sign-up {
           width: 40%;
           border: 2px solid #666;
-          border-radius: 10px;
+          border-radius: 4px;
      }
 
      #col-group {
@@ -382,10 +378,10 @@ select, input  {
           overflow: hidden;
     }
 
-     .log-in {
+     .log-in, .sign-up {
           width: 25%;
           border: 2px solid #666;
-          border-radius: 10px;
+          border-radius: 4px;
      }
 
 

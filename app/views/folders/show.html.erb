@@ -3,7 +3,7 @@
 </div>
 <div id="col-2">
 	<header class="folder">
-		<p><span class="bold"><%= @folder.name %></span> <%= @folder.description %></p>
+		<p><span class="folder-name"><%= @folder.name %> </span> <%= @folder.description %></p>
 	</header>
 	<ul class="link-list">
 		<% @folder.posts.each do |p| %>
@@ -11,7 +11,7 @@
 			<div class="col2-links">
 				<a href="<%= p.link_url %>" target="_blank">  <%= p.title %></a>- <span class="url"><%= p.strip_url %></span>
 				<% if current_user && current_user.id == @user.id %>
-					<span class='hide right'><%= link_to 'Delete', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-link' %> || Edit</span>
+					<span class='hide right post-edit'><%= link_to 'Delete', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-link' %> || Edit</span>
 				<% end %>
 				<p><%= p.description %></p>
 			</div>
