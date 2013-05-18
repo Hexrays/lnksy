@@ -1,13 +1,17 @@
 <% if current_user %>
 <header>
 	<h1 class='left settings'><span class="hi">Hi <%= link_to current_user.username.capitalize, user_path(current_user)%>!</span></h1>
-	<%= link_to "Log out", log_out_path, class: 'right settings hi' %>
-	<% else %>
-		<div class="logged-out">
-			<%= link_to "Sign up", sign_up_path, class: 'settings' %> or
-			<%= link_to "Log in", log_in_path, class: 'settings' %>
-		</div>
-	<% end %> 
+	<div class="right settings hi reveal">Settings</div>
+	<div class="settings-box">
+		<p><%= link_to "Account", edit_user_path(current_user), class: 'settings hi' %></p>
+		<p><%= link_to "Log out", log_out_path, class: 'settings hi' %></p>
+	</div>
+<% else %>
+	<div class="logged-out">
+		<%= link_to "Sign up", sign_up_path, class: 'settings' %> or
+		<%= link_to "Log in", log_in_path, class: 'settings' %>
+	</div>
+<% end %> 
 	<h1><%= image_tag "lnksy-logo2.png", class: 'static-logo', alt: 'lnksy', title: 'lnksy' %></h1>
 </header>
 <div class="flash">

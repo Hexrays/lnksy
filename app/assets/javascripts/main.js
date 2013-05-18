@@ -4,7 +4,8 @@ $(document).ready(function(){
 			opacity = 1;
 			linkField = $('div.add-link').hide();
 			folderField = $('div.add-folder').hide();
-			linkList = $('ul.link-list li').hide();
+			linkList = $('#col-2 ul.link-list li').hide();
+			settingsBox = $('.settings-box').hide();
 	// console.log(liCount);
 	// console.log(colorSteps);
 	// linkList.slideDown(750);
@@ -16,12 +17,14 @@ $(document).ready(function(){
 	$('h3.new-folder').on('click', function(){
 		folderField.slideToggle();
 	});
-
+	$('.reveal').on('click', function(){
+		settingsBox.slideToggle();
+	});
 	$('li').hover(function(){
 		$(this).find('.hide').toggle();
 	});
 
-	$('ul.link-list li').each(function(index){
+	linkList.each(function(index){
 		var $this = $(this);
 				// liColor = 'rgba(0,188,235, '+opacity+')';
 

@@ -1,40 +1,4 @@
 <div class="log-in">
 	<h2>JOIN LNKSY</h2>
-		<div class="login-form">
-		<%= form_for @user, :url => {:controller => 'users', :action => "create" } do |f| %>
-			<% if @user.errors.any? %>
-			<div class="flash">
-				<h2>Form is invalid</h2>
-				<ul>
-					<% for message in @user.errors.full_messages %>
-					<li><%= message %></li>
-					<% end %>
-				</ul>
-			</div>
-			<% end %>
-			
-			<p>
-				<%= f.label :username %>: <br/>
-				<%= f.text_field :username %>
-			</p>
-				<p>
-				<%= f.label :name %>: <br/>
-				<%= f.text_field :name %>
-			</p>
-			<p>
-				<%= f.label :email %>: <br/>
-				<%= f.text_field :email %>
-			</p>
-			<p>
-				<%= f.label :password %>: <br/>
-				<%= f.password_field :password %>
-			</p>
-			<p>
-				<%= f.label :password_confirmation %>: <br/>
-				<%= f.password_field :password_confirmation %>
-			</p>
-			
-			<p class="button"><%= f.submit 'Create Account' %></p>
-		<% end %>
-	</div>
+	<%= render 'form' %>
 </div>

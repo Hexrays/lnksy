@@ -25,7 +25,14 @@ class UsersController < ApplicationController
   end
 
   def edit
-  	@user = User.find(params[:id])
+  	@posts = Post.all
+    @post = Post.new
+    @new_folder = Folder.new
+    @folders = Folder.all
+    # @user = User.where(:username => params[:username]).first
+    # @user = User.find_by_username(params[:id])
+    @user = User.find(params[:id])
+    @users = User.all
   end
 
   def update

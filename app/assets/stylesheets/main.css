@@ -255,12 +255,24 @@ div.col2-links {
      /*font-size: 1.1em;*/
      font-family: "BebasNeueRegular";
      font-weight: normal;
+     cursor: pointer;
+}
+
+.settings-box {
+     width: 100%;
+     height: auto;
+     /*background-color: rgb(0,188,235);*/
+     clear: both;
+     text-align: right;
+     z-index: 999;
+     position: relative;
 }
 
 .static-logo {
      margin: .5em auto 0;
      max-width: 100%;
      text-align: center;
+     z-index: :;
 }
 
 .sign-box {
@@ -309,12 +321,15 @@ select, input  {
      text-align: left;
 }
 
-.login-form {
-     padding: .5em 0 0;
-}
+
 
 .logged-out {
      text-align: center;     
+}
+
+#col-2 .login-form{
+     padding: 1em 1.5em 4em;
+
 }
 
 /******************************************
@@ -383,6 +398,7 @@ select, input  {
           border: 2px solid #666;
           border-radius: 4px;
      }
+
 
 
 /*     .settings {
