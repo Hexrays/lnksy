@@ -166,6 +166,18 @@ header.folder, header.folder a {
      color: white;
 }
 
+.no-links li {
+     text-align: center;
+     padding: 1em;
+     /*color: white;*/
+     font-family: "BebasNeueRegular";
+     font-size: 1.5em;
+}
+
+.no-links .bigger {
+     font-size: 3em;
+}
+
 .folder-title {
      padding: 1em 0 0;
      /*border-bottom: 1px solid black;*/

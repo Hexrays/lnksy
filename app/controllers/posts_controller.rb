@@ -32,6 +32,7 @@ class PostsController < ApplicationController
 
 	def update
 		@post = Post.find(params[:id])
+    @user = current_user
 
 		if @post.update_attributes(params[:post])
 			redirect_to root_url notice: "Updated."
