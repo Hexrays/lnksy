@@ -159,7 +159,7 @@ img {
      padding-top: .6em;
 }
 
-header.folder {
+header.folder, header.folder a {
      padding: 1em 1.5em .5em;
      font-family: "BebasNeueRegular";
      background-color: black;
@@ -327,9 +327,8 @@ select, input  {
      text-align: center;     
 }
 
-#col-2 .login-form{
+#col-2 .login-form, #col-2 .folder-form, #col-2 .post-form {
      padding: 1em 1.5em 4em;
-
 }
 
 /******************************************

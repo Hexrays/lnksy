@@ -4,7 +4,7 @@ class FoldersController < ApplicationController
 
   def show
     @posts = Post.all
-    @post = Post.new
+    @new_post = Post.new
 		@folder = Folder.find(params[:id])
     @new_folder = Folder.new
     @users = User.all
@@ -30,7 +30,12 @@ class FoldersController < ApplicationController
 	end
 
   def edit
-  	@folder = Folder.find(params[:id])
+  	@posts = Post.all
+    @new_post = Post.new
+    @folder = Folder.find(params[:id])
+    @new_folder = Folder.new
+    @users = User.all
+    @user = User.find(params[:user_id])
   end
 
   def update

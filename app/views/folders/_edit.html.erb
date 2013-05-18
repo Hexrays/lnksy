@@ -1,0 +1,7 @@
+<div class="folder-form">
+	<%= form_for ([@user, @folder]) do |f| %>
+		<%= f.text_field :name, placeholder: 'Name' %><br/>
+		<%= f.text_area :description, placeholder: "Description..." %>
+		<%= f.submit "Update Folder" %>	
+	<% end %>
+</div>

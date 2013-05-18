@@ -24,6 +24,11 @@ $(document).ready(function(){
 		$(this).find('.hide').toggle();
 	});
 
+	$('.folder').hover(function(){
+		$(this).find('.hide').toggle();
+	});
+
+
 	linkList.each(function(index){
 		var $this = $(this);
 				// liColor = 'rgba(0,188,235, '+opacity+')';

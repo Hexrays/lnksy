@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def show
     @posts = Post.all
-    @post = Post.new
+    @new_post = Post.new
     @new_folder = Folder.new
     @folders = Folder.all
     # @user = User.where(:username => params[:username]).first
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def edit
   	@posts = Post.all
-    @post = Post.new
+    @new_post = Post.new
     @new_folder = Folder.new
     @folders = Folder.all
     # @user = User.where(:username => params[:username]).first

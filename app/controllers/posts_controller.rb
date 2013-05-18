@@ -17,11 +17,17 @@ class PostsController < ApplicationController
 
 	def index
 		@posts = Post.all
-		@post = Post.new
+		@new_post = Post.new
 	end
 
 	def edit
 		@post = Post.find(params[:id])
+		@posts = Post.all
+    @new_post = Post.new
+		# @folder = Folder.find(params[:id])
+    @new_folder = Folder.new
+    # @users = User.all
+		@user = current_user
 	end
 
 	def update

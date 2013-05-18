@@ -1,5 +1,5 @@
 <div class="post-form">
-	<%= form_for @new_post, :url => {:controller => 'posts', :action => "create" } do |f| %>
+	<%= form_for @post, :url => {:controller => 'posts', :action => "create" } do |f| %>
 		<div class="post">
 			<%= f.text_field :link_url, placeholder: "Url..."  %> <br/>
 
@@ -7,6 +7,6 @@
 		
 			<%= f.text_area :description, placeholder: "Description..." %>
 
-			<%= f.submit "Submit!", class: 'button' %>
+			<%= f.submit "Change Me!", class: 'button' %>
 	<% end %>
 </div>
