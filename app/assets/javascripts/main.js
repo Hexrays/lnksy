@@ -27,7 +27,7 @@ $(document).ready(function(){
 
 		setTimeout(function(){
 			var liColor = 'rgba(0,188,235, '+opacity+')';
-			$this.css('background-color', liColor).fadeIn();
+			$this.css('background-color', liColor).fadeIn(500);
 			opacity -= colorSteps;
 		}, index * 50);
 
