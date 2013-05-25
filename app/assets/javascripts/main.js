@@ -12,13 +12,19 @@ $(document).ready(function(){
 
 
 	$('h3.new-link').on('click', function(){
-		linkField.slideToggle();
+		linkField.slideToggle('fast');
 	});
 	$('h3.new-folder').on('click', function(){
-		folderField.slideToggle();
+		folderField.slideToggle('fast');
 	});
+
+	// $('section h3').on('click', function(){
+	// 	$('h3 + div').slideToggle();
+	// });
+
+
 	$('.reveal').on('click', function(){
-		settingsBox.slideToggle();
+		settingsBox.slideToggle('fast');
 	});
 	$('li').hover(function(){
 		$(this).find('.hide').toggle();
