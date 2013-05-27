@@ -1,8 +1,8 @@
 <% if current_user %>
 <header>
 	<h1 class='left settings'><span class="hi">Hi <%= link_to current_user.username.capitalize, user_path(current_user)%>!</span></h1>
-	<div class="right settings hi reveal">Settings</div>
-	<div class="settings-box">
+	<div class="right settings hi open">Settings</div>
+	<div class="settings-box hidden">
 		<p><%= link_to "Account", edit_user_path(current_user), class: 'settings hi' %></p>
 		<p><%= link_to "Log out", log_out_path, class: 'settings hi' %></p>
 	</div>
@@ -23,14 +23,14 @@
 <% if current_user && current_user.id == @user.id %>
 	<div class="add-things">
 		<section>
-			<h3 class="new-link">+ LINK</h3>
-			<div class="add-link">
+			<h3 class="new-link open">+ LINK</h3>
+			<div class="add-link hidden">
 				<%= render 'posts/form' %>
 			</div>
 		</section>
 		<section>
-			<h3 class="new-folder">+ FOLDER</h3>
-			<div class="add-folder">
+			<h3 class="new-folder open">+ FOLDER</h3>
+			<div class="add-folder hidden">
 				<%= render 'folders/form' %>
 			</div>
 		</section>

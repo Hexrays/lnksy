@@ -10,22 +10,10 @@ $(document).ready(function(){
 	// console.log(colorSteps);
 	// linkList.slideDown(750);
 
-
-	$('h3.new-link').on('click', function(){
-		linkField.slideToggle('fast');
-	});
-	$('h3.new-folder').on('click', function(){
-		folderField.slideToggle('fast');
+	$('.open').on('click', function(){
+		$(this).next('.hidden').slideToggle('fast');
 	});
 
-	// $('section h3').on('click', function(){
-	// 	$('h3 + div').slideToggle();
-	// });
-
-
-	$('.reveal').on('click', function(){
-		settingsBox.slideToggle('fast');
-	});
 	$('li').hover(function(){
 		$(this).find('.hide').toggle();
 	});
@@ -45,55 +33,7 @@ $(document).ready(function(){
 			opacity -= colorSteps;
 		}, index * 50);
 
-			// $this.css('background-color', liColor).slideDown();
-			// opacity -= colorSteps;
+
 	});
 
-
-	// var signBox = $('div.sign-up').hide();
-	// 		sw = $(window).width() / 2 - signBox.outerWidth() / 2,
-	// 		sh = $(window).height() / 2 - signBox.outerHeight() / 2;
-
-
-	// $('h3.sign').on('click', function(){
-	// 	signBox.css({
-	// 		'position': 'absolute',
-	// 		'top': sh,
-	// 		'left': sw
-	// 	}).fadeToggle();
-	// });
-
-	// var logBox = $('div.log-in').hide();
-	// 		lw = $(window).width() / 2 - logBox.outerWidth() / 2,
-	// 		lh = $(window).height() / 2 - logBox.outerHeight() / 2;
-
-
-	// $('h3.log').on('click', function(){
-	// 	logBox.css({
-	// 		'position': 'absolute',
-	// 		'top': lh,
-	// 		'left': lw
-	// 	}).fadeToggle();
-	// });
-
-
-		// for (var l = 0; l < liCount; l++) {
-		// 	$("ul.link-list li:nth-child("+l+")").slideDown();
-		// };
-
-	// jQuery.fn.rollDown = function( speed, easing, callback ) {
-		// for (var i = 0; i < liCount; i++) {
-		// 	$("ul.link-list li:nth-child("+i+")").toggle();
-		// };
-
-		// return $this.slideDown(500, function(){
-		// 	$this.delay(2000).slideUp(500);
-		// });	
-	// };
-
-	// linkList.rollDown();
-
-
-
-});
-
+}); // end ready
