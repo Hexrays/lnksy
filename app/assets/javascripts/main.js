@@ -11,7 +11,7 @@ $(document).ready(function(){
 	// linkList.slideDown(750);
 
 	$('.open').on('click', function(){
-		$(this).next('.hidden').slideToggle('fast');
+		$(this).next('.hidden').stop().slideToggle(300);
 	});
 
 	$('li').hover(function(){
@@ -21,6 +21,15 @@ $(document).ready(function(){
 	$('.folder').hover(function(){
 		$(this).find('.hide').toggle();
 	});
+
+	$('.add-things form').on('submit', function(evt){
+		if ($('#post_link_url').val() === '') {
+			alert('Your submission is useless without a lnk.');
+			evt.preventDefault();
+		} else {
+			$('.button').attr('disabled', true);
+		}
+	}); // end stop multi submissions
 
 
 	linkList.each(function(index){
