@@ -5,7 +5,7 @@
 	<header class="folder">
 		<span class="folder-name"><%= @folder.name %> </span> <%= @folder.description %>
 		<% if current_user && current_user.id == @user.id %>
-			<span class='hide right post-edit'><%= link_to 'Delete', [@user, @folder], method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-folder' %> <%= link_to "Edit", edit_user_folder_path(@folder), class: 'delete-folder' %></span>
+			<span class='hide right post-edit'><%= link_to 'Delete', [@user, @folder], method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-folder' %> <%= link_to "Edit", edit_user_folder_path(@user, @folder), class: 'delete-folder' %></span>
 		<% end %>
 	</header>
 	<% if @folder.posts.count > 0 %>

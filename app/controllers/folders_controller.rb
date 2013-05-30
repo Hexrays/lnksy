@@ -42,7 +42,7 @@ class FoldersController < ApplicationController
     @folder = Folder.find(params[:id])
 
     if @folder.update_attributes(params[:folder])
-      redirect_to root_url notice: "Updated."
+      redirect_to user_folder_path notice: "Updated."
     else
       render action: "edit"   
     end
