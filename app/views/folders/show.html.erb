@@ -8,6 +8,7 @@
 			<span class='hide right post-edit'><%= link_to 'Delete', [@user, @folder], method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-folder' %> <%= link_to "Edit", edit_user_folder_path(@folder), class: 'delete-folder' %></span>
 		<% end %>
 	</header>
+	<% if @folder.posts.count > 0 %>
 	<ul class="link-list">
 		<% @folder.posts.each do |p| %>
 		<li>
@@ -21,4 +22,14 @@
 		</li>
 		<% end %>
 	</ul>
+	<% else %>
+	<ul class="link-list no-links">
+		<li>HEY!!!</li>
+		<li>Why</li>
+		<li>am</li>
+		<li>I</li>
+		<li>still</li>
+		<li>empty?</li>
+	</ul>
+	<% end %>
 </div> <!-- end .col-2 -->
