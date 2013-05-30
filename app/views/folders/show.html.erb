@@ -13,7 +13,7 @@
 		<% @folder.posts.each do |p| %>
 		<li>
 			<div class="col2-links">
-				<a href="<%= p.link_url %>" target="_blank">  <%= p.title %></a>- <span class="url"><%= p.strip_url %></span>
+				<a href="<%= p.link_url %>" target="_blank">  <%= p.title %>- <span class="url"><%= p.strip_url %></span></a>
 				<% if current_user && current_user.id == @user.id %>
 					<span class='hide right post-edit'><%= link_to 'Delete', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-link' %> || <%= link_to "Edit", edit_post_path(p), class: 'delete-link' %></span>
 				<% end %>
