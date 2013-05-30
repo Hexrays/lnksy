@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   	@posts = Post.all
     @new_post = Post.new
     @new_folder = Folder.new
-    @folders = Folder.all
+    # @folders = Folder.all
     # @user = User.where(:username => params[:username]).first
     # @user = User.find_by_username(params[:id])
     @user = User.find(params[:id])
@@ -37,9 +37,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @new_post = Post.new
+    @new_folder = Folder.new
 
     if @user.update_attributes(params[:user])
-      redirect_to root_url notice: "Updated."
+      redirect_to root_url, notice: "Updated."
     else
       render action: "edit"   
     end

@@ -32,7 +32,9 @@ class PostsController < ApplicationController
 
 	def update
 		@post = Post.find(params[:id])
-
+    @new_post = Post.new
+    @new_folder = Folder.new
+    
 		if @post.update_attributes(params[:post])
 			redirect_to root_url, notice: "Updated."
 		else
