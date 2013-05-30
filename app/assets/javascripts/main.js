@@ -22,7 +22,7 @@ $(document).ready(function(){
 		$(this).find('.hide').toggle();
 	});
 
-	$('.add-things form').on('submit', function(evt){
+	$('.post-form').on('submit', function(evt){
 		if ($('#post_link_url').val() === '') {
 			alert('Your submission is useless without a lnk.');
 			evt.preventDefault();
