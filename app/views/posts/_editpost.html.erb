@@ -3,9 +3,7 @@
 		<div class="post">
 			<%= f.text_field :title, placeholder: "Title"  %> <br/>
 
-			<%= f.text_field :link_url, placeholder: "Url..."  %> <br/>
-
-			<%= f.select :folder_id, options_from_collection_for_select(current_user.folders.order("name"), 'id', 'name'), :include_blank => "Select a Folder..." %><br>
+			<%= f.select :folder_id, options_from_collection_for_select(current_user.folders.order("name"), 'id', 'name', :selected => @post.folder_id) %><br>
 		
 			<%= f.text_area :description, placeholder: "Description..." %>
 
