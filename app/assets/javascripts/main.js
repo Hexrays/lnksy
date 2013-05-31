@@ -14,13 +14,33 @@ $(document).ready(function(){
 		$(this).next('.hidden').stop().slideToggle(300);
 	});
 
-	$('li').hover(function(){
-		$(this).find('.hide').toggle();
-	});
+	$('li').hover(
+		function(){
+			$(this).find('.hide')
+				.stop(true, false)
+				.delay(400)
+				.fadeIn(300);
+		},
+		function(){
+			$(this).find('.hide')
+				.stop(true, true)
+				.fadeOut(50);
+		}
+	);
 
-	$('.folder').hover(function(){
-		$(this).find('.hide').toggle();
-	});
+	$('.folder').hover(
+		function(){
+			$(this).find('.hide')
+				.stop(true, false)
+				.delay(400)
+				.fadeIn(300);
+		},
+		function(){
+			$(this).find('.hide')
+				.stop(true, true)
+				.fadeOut(50);
+		}
+	);
 
 	$('.add-things .post-form').on('submit', function(evt){
 		if ($('#post_link_url').val() === '') {
